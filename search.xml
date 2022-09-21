@@ -11,6 +11,22 @@
         <content type="html"><![CDATA[<p>前几天在新电脑上安装了MySQL后，一直没有测试过功能，今天下午上pratical时才发现能连上server却无法访问administration权限。</p><blockquote><p>Could not acquire management access for administration</p><p>RuntimeError: Target host is configured as Windows, but seems to be a different OS. Please review the connection settings.</p></blockquote><p>向tutor请教也只是让我重装正确版本的MySQL。于是自己在网上搜了一圈，尝试更改了很多设置最终发现，是win11中文操作系统的编码问题，似乎是MySQL从8.0.25版本开始才出现的问题。</p><p>解决方法：</p><ol><li>设置→时间和语言→相关设置→管理语言设置</li><li>弹出的区域窗口中→管理标签页→更改系统区域设置</li><li>win11直接勾选上“Beta版：使用Unicode UTF-8 提供全球语言支持”，没有这个选项的话就把系统区域设成英文区吧。</li></ol><p>后记：当然如果我当初要是不偷懒把系统早点改成英文版就没这些事了呃，浪费了两个小时一点一点改系统设置环境变量真是要了命，最终居然只是因为中文编码问题……</p>]]></content>
       
       
+      <categories>
+          
+          <category> CS </category>
+          
+          <category> SQL </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MySQL </tag>
+            
+            <tag> CS </tag>
+            
+        </tags>
       
     </entry>
     

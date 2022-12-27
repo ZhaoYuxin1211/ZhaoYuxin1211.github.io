@@ -16,22 +16,24 @@
   <meta name="author" content="日">
   <meta name="keywords" content="">
   
-    <meta name="description" content="来到都柏林也快两个月了">
+    <meta name="description" content="稀疏数组（sparse array）: 非线性结构。当一个数组中大部分元素为０，或者为同一个值的数组时，可以使用稀疏数组来保存该数组。第一行保存行数、列数、数据总数。 二维数组转稀疏数组思路： 遍历原始数组，得到数据总数（sum） 创建新稀疏数组’int [sum+1] [3]’ 再次遍历，将有效数据存入稀疏数组中  稀疏数组转二维数组思路： 根据稀疏数组第一行的数据，创建原始二维数组  根据稀疏">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【221102】杂感">
-<meta property="og:url" content="http://hihiko.zxy/2022/11/02/%E3%80%90221102%E3%80%91%E6%9D%82%E6%84%9F/index.html">
+<meta property="og:title" content="Conversion between sparse arrays and two-dimensional arrays using Java">
+<meta property="og:url" content="http://hihiko.zxy/2022/12/27/Conversion-between-sparse-arrays-and-two-dimensional-arrays-using-Java/index.html">
 <meta property="og:site_name" content="My Private Arcady">
-<meta property="og:description" content="来到都柏林也快两个月了">
+<meta property="og:description" content="稀疏数组（sparse array）: 非线性结构。当一个数组中大部分元素为０，或者为同一个值的数组时，可以使用稀疏数组来保存该数组。第一行保存行数、列数、数据总数。 二维数组转稀疏数组思路： 遍历原始数组，得到数据总数（sum） 创建新稀疏数组’int [sum+1] [3]’ 再次遍历，将有效数据存入稀疏数组中  稀疏数组转二维数组思路： 根据稀疏数组第一行的数据，创建原始二维数组  根据稀疏">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-11-02T23:49:12.000Z">
-<meta property="article:modified_time" content="2022-11-03T00:55:27.047Z">
+<meta property="article:published_time" content="2022-12-27T00:20:48.000Z">
+<meta property="article:modified_time" content="2022-12-27T00:39:58.257Z">
 <meta property="article:author" content="日">
-<meta property="article:tag" content="日常">
+<meta property="article:tag" content="CS">
+<meta property="article:tag" content="Data Structures">
+<meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>【221102】杂感 - My Private Arcady</title>
+  <title>Conversion between sparse arrays and two-dimensional arrays using Java - My Private Arcady</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -208,7 +210,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="【221102】杂感"></span>
+            <span id="subtitle" data-typed-text="Conversion between sparse arrays and two-dimensional arrays using Java"></span>
           
         </div>
 
@@ -219,8 +221,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-11-02 23:49" pubdate>
-          November 2, 2022 pm
+        <time datetime="2022-12-27 00:20" pubdate>
+          December 27, 2022 am
         </time>
       </span>
     
@@ -231,7 +233,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          6.8k words
+          1.8k words
         
       </span>
     
@@ -242,7 +244,7 @@
         
         
         
-          57 mins
+          15 mins
         
       </span>
     
@@ -280,33 +282,36 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">【221102】杂感</h1>
+            <h1 style="display: none">Conversion between sparse arrays and two-dimensional arrays using Java</h1>
             
               <p class="note note-info">
                 
                   
-                    Last updated on November 3, 2022 am
+                    Last updated on December 27, 2022 am
                   
                 
               </p>
             
             
-              
-              <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="密码输入错误了喵" data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="3da6e1cee0ece4b920c90b2fe3cab9f96e11d973221881ed4975b7944db745f3">06423e480afdff19d80aaca02b9d701a5240975623adc9f7a645b7a39a16e08bc19fe3aa9f7a458a581685b49728ac5abaae0185c4888f4e05d2a27e9aa9e5b4ae977fa0dabfea445b72d78d21531c85bf29cc8494e98bb3dc9fd6d8b4ae383564372ae40bf382e38ec2f5247fa11f8831dd217788c16ac4af5c5fa89ec357dd9a04a25e3516e76cdec5a675730062ee512e8eed573c1b64bf859c3768e5150ce365fcddcf484afd6f37673fd2b1edafa49953ec2dacbc3c1b75c0c4d256b9c6769e96608d4f2f7377b0d50ad9fb55c177ee52c484c0bf1c72acf6d4fa27dff52c5a947039f09d13214381782a1ea0dd3a7be210adf3972806696d7a83595646b3b118bf759d40533c7da408a3c0d1157849fb81159d3df55ddf1b9120120457adfb2e41ca583c6d68fbd834db92186192b8038bf393226aa6798cc2e6c04c9e133410dde4d874dd1428c1f330ee2974aa78e91f58248191593e58e4d2c50709728497715d2e963e1acd811ec7e3b20806c12da9171b5f4b0c9b5c9771b5949d0cf69daf174c958f04891b50af275bc3d4114c57445908edfcd396c1bec84077861dcb3b7c162ad05a8a485c8c2ec934b0188da0d70427e637d3d96241894613b3fddb5b6e84feaf10562a3146f1c4456655fc59984047fbf333a17d3e98c4a9bbbfe90c550103728d62caa46ca50d16d3a0be95195eac5275e63b4faa9fab673aa3624457a04935e34b60a5f7ef42383043ecfdcb32e35f7724c015f1eb2732a4e2dc7bae59fa253ad794b12b016854fc2eb42237359a4263dffd3d9a4ae2ff670a3d9e9e665b91b98c15b1239f5abab1cea18c88074ce79f0b1fe860e4ce01180c04881017facd2ec6dcb1ce4a94f39c3380ed35e91ef97209d6a4ed19f6d8437c8e4518913b3a583e7921e8f9ec500b375e5d27a9302c84f0829306146a5097fbd90de2706b806380c2b393f56f095f6d101c383e0350b2f3cbb7669b71e257f6060d9f3704ffb3138d72e0c8c10cc03848fdaebedd4662b898d2f6e507ac1e88b46678aa2d17314afe5f7f72a8b9719a2b3f996250fc3b33d1289c6eb85b08c1d74ca02e0b48808500aa33c264e410b0fa15502faba0e4ac1ba29eb2f3cee6c43667ccfaf6d4a30f0e90b4af84c762d45cda3245e01bafdf5e8d33c19ab2496c1b04eeba8bc8f37ee50b8d9b1d498ea61a09abf360c48973ce0defda6f7105f689e0edf68171bf41faf94aaf3f3e843d3f392e8d50a9805a6bab99cd85472c53c708191e0513c72b2cf1a795c9ad35f63a78f04df9ef77a952b1dce9307ea9b64aebfa9737518a27bf755c24dff79e4ef96af9108fccc58a977fd5e6faabfa6a9be00b4e3ef9edb92a226eefcbd90a6340c4ad7a03e49a88cbcf4780da49658747e804e35c82f9ff6ef95d0d937cf02185d8d933c3e108354ab65b7c7026fb08846eb6d4543fe692831e95fbc1cd5f666a31180cfb15ddbfeeb7d00cc189ee70c5717767491793f13065a97da0b54e6088e115f03e9e65f167f26470100377aef4db426bea851fcae2369a0d347dee7aec6bc9796e07a623536169bb74a2b4a266e2bc427c0e2d2a3ef054c63340d5eb738f5b48fff5cde4fcc9e97ccb26de529c628fbeb2c8828cf98f700cebf3fa717288627c6dd6cc1a3c4f6d7511e94a95d8fa06ac92ec8cef1efb84c5c7d6fdd377bd4155040786af801c4f75331c09cf6fbba086c8d5b4cf15e52466406f9d02b2cbb458c2a6824935cf3fd575e96ff1888909cbcbaddd0482d591928be5e322bed1dbcac621f0bcd8a134d69e69cfefd5e553000eed0c6de4ae3666863dea4490685f9211421b5b2bb3d0b40e027bf6000340b0b614e1e70ade362c7dc53294eb0b18aadaa219122269ab00c08d3b77a38f05decc09ebdb2a2de2ef67cca1c14179110b54feb16cd6aef47e12325c21bd63be3776541582ddea6c213c183f33e739b224c4df075ffeca09d8a39a96b178be04ad87812475cbfeb1d0f4821692cbf6b47f826a4ac5dd1597908f4ad59ef0d3a4f2ec208ce892607b2356328299fb7a8023ca1750af46fc08081359d6c71eea7ee6724c1fb5afeb70afc8d51d2981f2215a927a8d0e9fc1d5bd7ae5be4035eaf8b561ca2f090cc04bfe780874e907e73c7a1e6723b177f3fdb359081d45947e142469217dffcddbc501174c7891d2b1052138e4f22e031cadf4e12efacfc640220f10fc2a7f84ee104032f7435f12fe71c25a0e9840941b882f3bb3bdd748343c23b48b7de6baddec199f770aa309747a593e0a8c1879647cd57b31d560ec6a73e305612e6f729d6c68bd6591952d82680c33a0d15966e4587c676364b9d7aa4e0b656b690b2fc08b9c620e2d296a7047309e6d0292bf77ff9279d9725479610f6f606026cdb1472db446caa1405c54c6d758ea35c989c6b780ec26833ea5f8d14651f794687a14589c006a893cf842eed16d104bf66e816c22d72d0d404371750a0578f1a654b6bb2eb6a2464d40e4981db002f11e881a5cda5ac2463bc45a563095b1a0c3b8a84718a4ee299e5dbc0d1fc678e047e878d3b57bfa11b15f31ed3e0230fc6081c09bc0268ae905522f7685eace7809d22a5f073f58c04d2ccd6af5ad87503ccb291bb3ad83e23f218e60a3eb8512c0af52499bafc427a9e440569595803e6d61bfc2e524404cb511a49fd435b0a331f2a85afd2e5a8311a97a8c7b19fada66c0282424f6c88c4f662a7d0ddd82b3138d6a912f5990e4288a45d5c2b02e177e71a6d89b32a575e525783f25fdb1ed6cbb1495e4ce22177f2502dd913de27001e10be6e50cdb546f31039b0ef6c2266d2abebe77b3529c83a287c29648418b60ab3d7e1d87506a9a8be56fa49568620d295300c54882b3b78b5aaa8ed3b29c59a4203099df045191e0644f407e395fb76c8aed63a6935c4c74a8929c512115313272ee23ee9681247c0b39da418ed9a52d91ad8e67e54cf26d841f0b1082885dc598a38a4512bbe1d42539cd21087a0752b6fb669f6ae388b1afa47e991736bdeb9de0ab08eccfe56e4439088cf8609dfa57f29784914a5f40b613e4fb8704616cc6bafe375b00bbbb54bcd1da6a67cecdc30cb6ffcbac846960bdb42c10ba97a54ec8e7fd05e56d29f84a9781627cf527826f1e76dd30fdb89a2f00ae7543652de61a68799a9ce58e33cd6c0d3e6bb9d93aaa952183838102f9fe3be26b3bca64ee5d98bc96a3224fcfdb42c6e883ff3f88a41e7fa0574a38720b39c38823597112a23cc4ffe604441b24b2ab4d7f8064c24a66f5ac350868318a129012d08cedfa197c2893d19fe8c6d0f8103cb42c074f75eec37a1479e7f39e283904a4bc431cf52f5d3422185b405becc8d3375587f57c3b4c48be9a08b0198cdb2ddb8049847980269ecd6366dc6dd487ad5321b5dfaae4185587905c98f296790d0c855e3cc97509a09aa7fa9b98744b5747e80dbf65506fb9e922fbf43110a662048387425c155c6b1420e28cf154779bacdef3c7f077f4cced1fd8e5bc0149ae0f157665a9577817e253b780157c527b16d50acbf0808b9080efd21250663bfb0b1ee0efbfc9c11cb6b8c771239e6e567fa131f5b4ef6da7bb4f6bf97c1d125c963c9d9fb8c90084774e73684979378f1ed70b837cee682ceff6ee5d7f317b7145bd327257bb3fc12b8b4a6db3d604d53d4d5ca2670eae9217222933426ac33bf8e4853d8f5aa92f3d68b130d45a68ca0967d22883dbe4c9c732b8b7dbfcd030b5e36d8e5e3fd2f0140ff5f09adcf25f4ceebfd6f608734470b64deac29fd8ba4be87a4b725c9be1f3c93e49742ce510a9292d941c420c9ac1351d5858b4e850550a9509e977840364019a11cd2a681d3c9a407a8680a47053df9031d40eec4b56df2dea6fb26e896ecf0b03c2999081db2decf985f9ed83ad3dad7ac2828a18aef1211201237e7c811409fa8199137670d3b572e121e562709a631b1ec9bc3b003408ad5fc1fce0cf0d56f244449fcc3c9e5757482206189a4fca425e0ab7580d7e1c9e2f2d559126b95bdc46a5f1a5f7b7693c8c476676844553931f32a3dd14566c713ac8e4ab2370f0d3fdfc0028402b8118e031d119a22bd4deeedee001c0abb6c5a67ec249f7fdc383c6f695f467edc4f168e4cc9a370bf3050bad274e9b82b6091efea42d13bcaa0452d3cfb3933a38431920dd82d78deff34980529d951cdb5e3f4c777d3f28306bc9c22b836b152213499192987a55171ef707c7a34bfa22c7b14594b40e783ea46af25a1a6076167562c133a1f1f0a7b12013e4d408d6f34de7be6edfd66fc3bd9ed896fbbdb71ae85972b2342486534c2bfbf695240dabad4dfb247333a9521b5fd2826a21538cc912247cc948fc4d8ad7d80101a33f46e87cf0e6c1c756daa9108bee5d26ba8aae27bb1072588b55c16401f28f620c8559760a7f2f9f95d240742a791234fa61aa37b978c80cecaa875b6a5e05869c9b03dd781485553da60c1986fdb65641885f231ac51acfea7ae62ad88fa902ed4b7dbdc1a3244c75d58197292310493e3a3af7d5d8a777abf5b0463549630bf5d7a0b19aef9b4b36900f1337136272bc35fb978a075da0ce78fb4bbe96776bcb409a07027795cd0b8430e36869f11eb176c14a3cbe9b21ac48b195d9188fa05534c2f9ab12a71b0d55c8109e317d417b50082f51728e8eb312df4e9f2aa982d516becc9b5313a523c5c08e8d4e5ff59f435dfc7ec1726bd50d2466f71205ad94107cf5329e01badd89424cad5ae78cbbc4a7428821d7</script>
-  <div class="hbe hbe-content">
-    <div class="hbe hbe-input hbe-input-default">
-      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
-      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码喵</span>
-      </label>
-    </div>
-  </div>
-</div>
-<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
-              
+              <div class="markdown-body">
+                
+                <p>稀疏数组（sparse array）: 非线性结构。当一个数组中大部分元素为０，或者为同一个值的数组时，可以使用稀疏数组来保存该数组。第一行保存行数、列数、数据总数。</p>
+<h6 id="二维数组转稀疏数组思路："><a href="#二维数组转稀疏数组思路：" class="headerlink" title="二维数组转稀疏数组思路："></a>二维数组转稀疏数组思路：</h6><ol>
+<li>遍历原始数组，得到数据总数（sum）</li>
+<li>创建新稀疏数组’int [sum+1] [3]’</li>
+<li>再次遍历，将有效数据存入稀疏数组中</li>
+</ol>
+<h6 id="稀疏数组转二维数组思路："><a href="#稀疏数组转二维数组思路：" class="headerlink" title="稀疏数组转二维数组思路："></a>稀疏数组转二维数组思路：</h6><ol>
+<li><p>根据稀疏数组第一行的数据，创建原始二维数组</p>
+</li>
+<li><p>根据稀疏数组后面几行的数据，将数据赋予原始二维数组。</p>
+</li>
+</ol>
+<h5 id="例：在一个11-11的棋盘上有两个棋子，记录这两个棋子的信息。"><a href="#例：在一个11-11的棋盘上有两个棋子，记录这两个棋子的信息。" class="headerlink" title="例：在一个11*11的棋盘上有两个棋子，记录这两个棋子的信息。"></a>例：在一个11*11的棋盘上有两个棋子，记录这两个棋子的信息。</h5><h6 id="代码实现："><a href="#代码实现：" class="headerlink" title="代码实现："></a>代码实现：</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//  原始二维数组，0代表无棋子，1代表黑棋，2代表白棋</span><br>        <span class="hljs-type">int</span>[][] chessArrayOri = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-number">11</span>][<span class="hljs-number">11</span>];<br>        chessArrayOri[<span class="hljs-number">1</span>][<span class="hljs-number">2</span>] = <span class="hljs-number">1</span>;<br>        chessArrayOri[<span class="hljs-number">2</span>][<span class="hljs-number">4</span>] = <span class="hljs-number">2</span>;<br><span class="hljs-comment">//	打印原始二维数组</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span>[] row : chessArrayOri) &#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> item : row) &#123;<br>                System.out.print(item + <span class="hljs-string">&quot; &quot;</span>);<br>            &#125;<br>            System.out.println();<br>        &#125;<br><br><span class="hljs-comment">//  二维数组转稀疏数组</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">sum</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; chessArrayOri.length; i++) &#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; chessArrayOri.length; j++)&#123;<br>                <span class="hljs-keyword">if</span> (chessArrayOri[i][j] != <span class="hljs-number">0</span>)&#123;<br>                    sum++;<br>                &#125;<br>            &#125;<br>        &#125;	<span class="hljs-comment">//统计数据总数</span><br>	    <span class="hljs-type">int</span>[][] sparseArray = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[sum+<span class="hljs-number">1</span>][<span class="hljs-number">3</span>];<br>        sparseArray[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>] = chessArrayOri.length;<br>        sparseArray[<span class="hljs-number">0</span>][<span class="hljs-number">1</span>] = chessArrayOri[<span class="hljs-number">0</span>].length;<br>        sparseArray[<span class="hljs-number">0</span>][<span class="hljs-number">2</span>] = sum;	<span class="hljs-comment">//构建稀疏数组第一行信息</span><br><br>        <span class="hljs-type">int</span> <span class="hljs-variable">count</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; chessArrayOri.length; i++) &#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; chessArrayOri.length; j++)&#123;<br>                <span class="hljs-keyword">if</span> (chessArrayOri[i][j] != <span class="hljs-number">0</span>)&#123;<br>                    count++;<br>                    sparseArray[count][<span class="hljs-number">0</span>] = i;<br>                    sparseArray[count][<span class="hljs-number">1</span>] = j;<br>                    sparseArray[count][<span class="hljs-number">2</span>] = chessArrayOri[i][j];<br>                &#125;<br>            &#125;<br>        &#125;	<span class="hljs-comment">//将数据存入稀疏数组</span><br><br>        System.out.println(<span class="hljs-string">&quot;===================================&quot;</span>);<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span>[] row : sparseArray) &#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> item : row) &#123;<br>                System.out.print(item + <span class="hljs-string">&quot; &quot;</span>);<br>            &#125;<br>            System.out.println();<br>        &#125;	<span class="hljs-comment">//打印生成的稀疏数组</span><br><br><span class="hljs-comment">// 稀疏数组转二维数组</span><br>        <span class="hljs-type">int</span>[][] chessArr = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[sparseArray[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>]][sparseArray[<span class="hljs-number">0</span>][<span class="hljs-number">1</span>]];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt; sparseArray.length; i++)&#123;<br>            chessArr[sparseArray[i][<span class="hljs-number">0</span>]][sparseArray[i][<span class="hljs-number">1</span>]] = sparseArray[i][<span class="hljs-number">2</span>];<br>        &#125;	<span class="hljs-comment">//生成二维数组</span><br><br>        System.out.println(<span class="hljs-string">&quot;==========================================&quot;</span>);<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span>[] row : chessArr) &#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> item : row) &#123;<br>                System.out.print(item + <span class="hljs-string">&quot; &quot;</span>);<br>            &#125;<br>            System.out.println();<br>        &#125;	<span class="hljs-comment">//打印还原的二维数组</span><br></code></pre></td></tr></table></figure>
 
-              
+
+                
+              </div>
             
             <hr/>
             <div>
@@ -322,12 +327,12 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E6%97%A5%E5%B8%B8/" class="category-chain-item">日常</a>
+  <a href="/categories/CS/" class="category-chain-item">CS</a>
   
   
     <span>></span>
     
-  <a href="/categories/%E6%97%A5%E5%B8%B8/%E6%9D%82%E6%84%9F/" class="category-chain-item">杂感</a>
+  <a href="/categories/CS/Data-Structures/" class="category-chain-item">Data Structures</a>
   
   
 
@@ -344,7 +349,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E6%97%A5%E5%B8%B8/">#日常</a>
+        <a href="/tags/CS/">#CS</a>
+      
+        <a href="/tags/Data-Structures/">#Data Structures</a>
+      
+        <a href="/tags/Java/">#Java</a>
       
     </div>
   
@@ -356,8 +365,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>【221102】杂感</div>
-      <div>http://hihiko.zxy/2022/11/02/【221102】杂感/</div>
+      <div>Conversion between sparse arrays and two-dimensional arrays using Java</div>
+      <div>http://hihiko.zxy/2022/12/27/Conversion-between-sparse-arrays-and-two-dimensional-arrays-using-Java/</div>
     </div>
     <div class="license-meta">
       
@@ -369,7 +378,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>November 2, 2022</div>
+          <div>December 27, 2022</div>
         </div>
       
       
@@ -413,18 +422,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/12/27/Conversion-between-sparse-arrays-and-two-dimensional-arrays-using-Java/" title="Conversion between sparse arrays and two-dimensional arrays using Java">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Conversion between sparse arrays and two-dimensional arrays using Java</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/09/21/MySQL-Workbench%E5%9C%A8%E4%BD%BF%E7%94%A8%E6%97%B6%E5%87%BA%E7%8E%B0%E2%80%98Could-not-acquire-management-access-for-administration%E2%80%99%E7%9A%84%E9%94%99%E8%AF%AF/" title="MySQL Workbench在使用时出现‘Could not acquire management access for administration’的错误">
-                        <span class="hidden-mobile">MySQL Workbench在使用时出现‘Could not acquire management access for administration’的错误</span>
+                      <a href="/2022/11/02/%E3%80%90221102%E3%80%91%E6%9D%82%E6%84%9F/" title="【221102】杂感">
+                        <span class="hidden-mobile">【221102】杂感</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -577,23 +580,6 @@
   
 
 
-
-
-  
-  <script defer>
-    if (document.getElementById('hbePass')) {
-      Fluid.utils.waitElementLoaded('hbe-prefix', function() {
-        var hbePrefix = document.querySelector('hbe-prefix');
-        hbePrefix.parentElement.classList.add('markdown-body');
-        Fluid.utils.retry(function() {
-          if (Fluid.boot && Fluid.boot.refresh) {
-            Fluid.boot.refresh();
-            return true;
-          }
-        }, 100, 10);
-      })
-    }
-  </script>
 
 
   

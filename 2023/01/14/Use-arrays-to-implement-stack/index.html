@@ -16,27 +16,24 @@
   <meta name="author" content="日">
   <meta name="keywords" content="">
   
-    <meta name="description" content="仅供学习交流，禁止二传二改，严禁商用。喜欢请前往pixiv上支持原作者。">
+    <meta name="description" content="栈：先入后出(FILO-First In Last Out)的有序链表。top–bottom, pop–push。 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253&#x2F;&#x2F;use arrays to implement stackclass ArraySta">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【自汉化】[饭短][lyoku]ツレナイオーバーテレパシー">
-<meta property="og:url" content="http://hihiko.zxy/2022/12/30/103061284/index.html">
+<meta property="og:title" content="Use arrays to implement stack">
+<meta property="og:url" content="http://hihiko.zxy/2023/01/14/Use-arrays-to-implement-stack/index.html">
 <meta property="og:site_name" content="My Private Arcady">
-<meta property="og:description" content="仅供学习交流，禁止二传二改，严禁商用。喜欢请前往pixiv上支持原作者。">
+<meta property="og:description" content="栈：先入后出(FILO-First In Last Out)的有序链表。top–bottom, pop–push。 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253&#x2F;&#x2F;use arrays to implement stackclass ArraySta">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-12-30T22:08:35.000Z">
-<meta property="article:modified_time" content="2022-12-30T22:41:26.557Z">
+<meta property="article:published_time" content="2023-01-14T14:55:39.000Z">
+<meta property="article:modified_time" content="2023-01-14T15:19:24.521Z">
 <meta property="article:author" content="日">
-<meta property="article:tag" content="同人">
-<meta property="article:tag" content="汉化">
-<meta property="article:tag" content="龙珠">
-<meta property="article:tag" content="短笛">
-<meta property="article:tag" content="孙悟饭">
-<meta property="article:tag" content="饭短">
+<meta property="article:tag" content="Data Structures">
+<meta property="article:tag" content="CS">
+<meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>【自汉化】[饭短][lyoku]ツレナイオーバーテレパシー - My Private Arcady</title>
+  <title>Use arrays to implement stack - My Private Arcady</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -213,7 +210,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="【自汉化】[饭短][lyoku]ツレナイオーバーテレパシー"></span>
+            <span id="subtitle" data-typed-text="Use arrays to implement stack"></span>
           
         </div>
 
@@ -224,8 +221,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-12-30 22:08" pubdate>
-          December 30, 2022 pm
+        <time datetime="2023-01-14 14:55" pubdate>
+          January 14, 2023 pm
         </time>
       </span>
     
@@ -236,7 +233,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.9k words
+          1.1k words
         
       </span>
     
@@ -247,7 +244,7 @@
         
         
         
-          24 mins
+          10 mins
         
       </span>
     
@@ -285,33 +282,25 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">【自汉化】[饭短][lyoku]ツレナイオーバーテレパシー</h1>
+            <h1 style="display: none">Use arrays to implement stack</h1>
             
               <p class="note note-info">
                 
                   
-                    Last updated on December 30, 2022 pm
+                    Last updated on January 14, 2023 pm
                   
                 
               </p>
             
             
-              
-              <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="密码输入错误了喵" data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="fb054e07e20ea7fe1cba94d87a1ac629633c3ecb5da660c469f5c3aac4afaac2">2688af8b85aa34bfd90ed42dca1d99c0ec8439458bc02954d4270c68a85eed5ecbb583985f4df6745032a6457aff83a2af0f1b9e2bd88f8478661039c09f20d28ace3432d20377d9dd848a349d313233e7cbe63921f60db9095c193b31f35c6991a71802a89032ba62045af035e92ce4997c02c88f2607d304ff78f163a38c3be8037f7ce9d082ba7bda67e23623c44b4a1f7e4aa01498220cc4b211804350271ac430f4abbdc26d6fdc0a402a925adedc82e816cd39f930b2fe4d3b67a6cab65d5f76b574554b247efc3dabc65715b9e1c2944d154c2400c6b1e5a90320ed2fac3098f77caeaae4c565514f873d39cd733f9e9b446c1ed8c28a9fd9e2f1969c70d2e2fe55fb1e23b9f41f328a42450b1fe542726263f8cf2a3a44a1350e78834e43390d27376989ecec0708d0d3f6146ea5208e58fa99164915a503d219b76ec6a695016b03635235c8bb63efef1d6cc4a27a87146a54412fd6c113603e2eec7cbb81e1a26ab9f25c5ebfb353230ade21095046eaf5ec5b62641c6fcdf8fe94a7752225492724dd6fba17ca481a4dfc96b75dceb933895fae29c34756a5f8734814a1829e110ff1bad4a1f75497eb3cdfe1af38504e9ac9cfc8a9773c9ebb4c70a1fe50537e59d8f1a1a4def113f21dc3406cd74ce6a78bce269b36a7f892666004605cf47455c71a128dd3b8a5f180b774437237ae100d4536feeeb8be635b017a1ef66dd54e1f0ee02ccef6ddf8f003e2787dd12b42d8a2db186fd282be68d1a6a086c6d37301eac231b87e3c4a062940cfef4c30e22d9906d1c16d6527dba493d2e73dcae876f90ed1e35fcecb3547879120bb4bed17269c8656369ad1392672139be2a8b3e8b9ca60e2aa4d8ec7af8866462b1dc35af268bb856e33fe98702dedb9dd96f5e652b68b762f6fd1ee8c7808a220c16380481017b881082ff64923ad6ebb60eed73b1a80f6baa156774868d113abd54efe01b92d5506f2a57ac111a958e23947d7a10f630f1f36c1d45953794d6612e21c399514dc7870258d8129b8bfe94f459967782c3f903d76f90ab4093eb8517fcf438b78103db1f8107ff2e84c95c9c6988ab27acc8c5c8578c241e6de65ba8cebd44d536d6f0ed0ea3ef7d9b781849e40f878f330d05423f737f6c774fffa5897d4e71729e3089d5e424837f3282e122f4589ac8b551929cf851882152881816aa7929ec47c15d95ba648b5aa20b3fce89d6623bc9c3728efdae67d15f4168ec77fdce9919942a108323bf9871565f23adb1b58a849825960da4566056d24c3ae58d59ebc04c43e48c1a6bee9f8b48a95f312255a0c2336461335a1381c625fdd0c534ea3a22bfabc0e4734d9cef17bd3c68d438c72c267f2bf106537a92a647658d35e79b9de4bd427651360f3973dbae6ad93c86dcb924a9910dd5772984a4844cde17c56fd764d4683ab0e30b900b0ef6680249b2034631ed401fe4c2d6b526b12e157ac44ddf221d71495f04054d99bdc49db8a9d3a7c2cb77a02903d97c602f4c2a12cf810c9d2de63c2478597f05842f8cea2041c7558dbf4582f0e9fdbdf424c23be8f3e5df8f2f448a73b81386e0dd0d8842fd4bb07809b470fc45823e7057629d7530669abe4069529b44df16a096d78751239456d14aa95e9f9fd44b347929df2ddc5fdbb0a331b41f1c2904ee04f1eaccd2b6a626ef7f1c6425c0189bf600c6226e20992112771f112cde95e69afde35f2ee917c3f284f2229d0a3d52e0c2e24a07b28e41fe278314af20f8b6e5f3632e6b56e5035580cfda2b4c6cdc477a4349938b2b191391f9282a02591e860dbcb712c98d066d225f398b71f31e0fe059c6e8ae0ca9a246a76ca2340166421374f4db1eb718ece0842ac0e7a522e100ac6afd61470c29b2aa2dffc2f2d26c4609b538e443b041b445e89249fdf05b547aa5f95805263a9ebfe004964ed2e41ed1a631bbbd055abc4b7bc89064f27bd82127d8e02f0f9492f4880ccca437f29462ea8bf9c</script>
-  <div class="hbe hbe-content">
-    <div class="hbe hbe-input hbe-input-default">
-      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
-      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入该作品的PID</span>
-      </label>
-    </div>
-  </div>
-</div>
-<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
-              
+              <div class="markdown-body">
+                
+                <p>栈：先入后出(FILO-First In Last Out)的有序链表。top–bottom, pop–push。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//use arrays to implement stack</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">ArrayStack</span> &#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> maxSize;    <span class="hljs-comment">//size of stack</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span>[] stack;    <span class="hljs-comment">//data</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> <span class="hljs-variable">top</span> <span class="hljs-operator">=</span> -<span class="hljs-number">1</span>;   <span class="hljs-comment">//top of the stack, initiated as -1</span><br><br>    <span class="hljs-comment">//constructor</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">ArrayStack</span><span class="hljs-params">(<span class="hljs-type">int</span> maxSize)</span> &#123;<br>        <span class="hljs-built_in">this</span>.maxSize = maxSize;<br>        <span class="hljs-built_in">this</span>.stack = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[maxSize];<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">isFull</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> top == maxSize - <span class="hljs-number">1</span>;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">isEmpty</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> top == -<span class="hljs-number">1</span>;<br>    &#125;<br><br>    <span class="hljs-comment">//push</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">push</span><span class="hljs-params">(<span class="hljs-type">int</span> value)</span> &#123;<br>        <span class="hljs-keyword">if</span> (isFull()) &#123;<br>            System.out.println(<span class="hljs-string">&quot;The stack has been full. Can&#x27;t push new value in it.&quot;</span>);<br>            <span class="hljs-keyword">return</span>;<br>        &#125;<br>        top++;<br>        stack[top] = value;<br>    &#125;<br><br>    <span class="hljs-comment">//pop</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">pop</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">if</span> (isEmpty()) &#123;<br>            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RuntimeException</span>(<span class="hljs-string">&quot;The stack has been empty. Can&#x27;t pop.&quot;</span>);<br>        &#125;<br><br>        <span class="hljs-type">int</span> <span class="hljs-variable">value</span> <span class="hljs-operator">=</span> stack[top];<br>        top--;<br>        <span class="hljs-keyword">return</span> value;<br>    &#125;<br><br>    <span class="hljs-comment">//iterate (from top to bottom)</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">showStack</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">if</span> (isEmpty()) &#123;<br>            System.out.println(<span class="hljs-string">&quot;The stack is empty.&quot;</span>);<br>            <span class="hljs-keyword">return</span>;<br>        &#125;<br><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> top; i &gt;= <span class="hljs-number">0</span>; i--) &#123;<br>            System.out.println(<span class="hljs-string">&quot;stack[&quot;</span> + i + <span class="hljs-string">&quot;] = &quot;</span> + stack[i]);<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-              
+
+                
+              </div>
             
             <hr/>
             <div>
@@ -324,6 +313,23 @@
 <span class="category-chains">
   
   
+    
+      <span class="category-chain">
+        
+  <a href="/categories/CS/" class="category-chain-item">CS</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/CS/Data-Structures/" class="category-chain-item">Data Structures</a>
+  
+  
+
+  
+
+      </span>
+    
+  
 </span>
 
     </div>
@@ -332,17 +338,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E5%90%8C%E4%BA%BA/">#同人</a>
+        <a href="/tags/Data-Structures/">#Data Structures</a>
       
-        <a href="/tags/%E6%B1%89%E5%8C%96/">#汉化</a>
+        <a href="/tags/CS/">#CS</a>
       
-        <a href="/tags/%E9%BE%99%E7%8F%A0/">#龙珠</a>
-      
-        <a href="/tags/%E7%9F%AD%E7%AC%9B/">#短笛</a>
-      
-        <a href="/tags/%E5%AD%99%E6%82%9F%E9%A5%AD/">#孙悟饭</a>
-      
-        <a href="/tags/%E9%A5%AD%E7%9F%AD/">#饭短</a>
+        <a href="/tags/Java/">#Java</a>
       
     </div>
   
@@ -354,8 +354,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>【自汉化】[饭短][lyoku]ツレナイオーバーテレパシー</div>
-      <div>http://hihiko.zxy/2022/12/30/103061284/</div>
+      <div>Use arrays to implement stack</div>
+      <div>http://hihiko.zxy/2023/01/14/Use-arrays-to-implement-stack/</div>
     </div>
     <div class="license-meta">
       
@@ -367,7 +367,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>December 30, 2022</div>
+          <div>January 14, 2023</div>
         </div>
       
       
@@ -406,6 +406,23 @@
 
 
 
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/01/11/Use-circular-linked-list-to-solve-Josephus-problem/" title="Use circular linked list to solve Josephus problem">
+                        <span class="hidden-mobile">Use circular linked list to solve Josephus problem</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
               
             </div>
 
@@ -552,23 +569,6 @@
   
 
 
-
-
-  
-  <script defer>
-    if (document.getElementById('hbePass')) {
-      Fluid.utils.waitElementLoaded('hbe-prefix', function() {
-        var hbePrefix = document.querySelector('hbe-prefix');
-        hbePrefix.parentElement.classList.add('markdown-body');
-        Fluid.utils.retry(function() {
-          if (Fluid.boot && Fluid.boot.refresh) {
-            Fluid.boot.refresh();
-            return true;
-          }
-        }, 100, 10);
-      })
-    }
-  </script>
 
 
   

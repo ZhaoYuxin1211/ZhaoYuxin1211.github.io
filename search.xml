@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>Use arrays to implement stack</title>
+      <link href="/2023/01/14/Use-arrays-to-implement-stack/"/>
+      <url>/2023/01/14/Use-arrays-to-implement-stack/</url>
+      
+        <content type="html"><![CDATA[<p>栈：先入后出(FILO-First In Last Out)的有序链表。top–bottom, pop–push。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//use arrays to implement stack</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">ArrayStack</span> &#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> maxSize;    <span class="hljs-comment">//size of stack</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span>[] stack;    <span class="hljs-comment">//data</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> <span class="hljs-variable">top</span> <span class="hljs-operator">=</span> -<span class="hljs-number">1</span>;   <span class="hljs-comment">//top of the stack, initiated as -1</span><br><br>    <span class="hljs-comment">//constructor</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">ArrayStack</span><span class="hljs-params">(<span class="hljs-type">int</span> maxSize)</span> &#123;<br>        <span class="hljs-built_in">this</span>.maxSize = maxSize;<br>        <span class="hljs-built_in">this</span>.stack = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[maxSize];<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">isFull</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> top == maxSize - <span class="hljs-number">1</span>;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">isEmpty</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> top == -<span class="hljs-number">1</span>;<br>    &#125;<br><br>    <span class="hljs-comment">//push</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">push</span><span class="hljs-params">(<span class="hljs-type">int</span> value)</span> &#123;<br>        <span class="hljs-keyword">if</span> (isFull()) &#123;<br>            System.out.println(<span class="hljs-string">&quot;The stack has been full. Can&#x27;t push new value in it.&quot;</span>);<br>            <span class="hljs-keyword">return</span>;<br>        &#125;<br>        top++;<br>        stack[top] = value;<br>    &#125;<br><br>    <span class="hljs-comment">//pop</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">pop</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">if</span> (isEmpty()) &#123;<br>            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RuntimeException</span>(<span class="hljs-string">&quot;The stack has been empty. Can&#x27;t pop.&quot;</span>);<br>        &#125;<br><br>        <span class="hljs-type">int</span> <span class="hljs-variable">value</span> <span class="hljs-operator">=</span> stack[top];<br>        top--;<br>        <span class="hljs-keyword">return</span> value;<br>    &#125;<br><br>    <span class="hljs-comment">//iterate (from top to bottom)</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">showStack</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">if</span> (isEmpty()) &#123;<br>            System.out.println(<span class="hljs-string">&quot;The stack is empty.&quot;</span>);<br>            <span class="hljs-keyword">return</span>;<br>        &#125;<br><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> top; i &gt;= <span class="hljs-number">0</span>; i--) &#123;<br>            System.out.println(<span class="hljs-string">&quot;stack[&quot;</span> + i + <span class="hljs-string">&quot;] = &quot;</span> + stack[i]);<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> CS </category>
+          
+          <category> Data Structures </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Data Structures </tag>
+            
+            <tag> CS </tag>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Use circular linked list to solve Josephus problem</title>
       <link href="/2023/01/11/Use-circular-linked-list-to-solve-Josephus-problem/"/>
       <url>/2023/01/11/Use-circular-linked-list-to-solve-Josephus-problem/</url>

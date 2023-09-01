@@ -16,27 +16,24 @@
   <meta name="author" content="日">
   <meta name="keywords" content="">
   
-    <meta name="description" content="仅供学习交流，禁止二传二改，严禁商用。喜欢请前往pixiv上支持原作者。">
+    <meta name="description" content="Problem and backgroundGiven a maze[][] of n * m matrix, a rat has to find a path from source to destination.  Use a recursive method to find the exit route of the maze. Backtracking is a versatile alg">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【自汉化】[贝吉短][かうす]贝吉P初夜漫画">
-<meta property="og:url" content="http://hihiko.zxy/2022/12/04/78864118/index.html">
+<meta property="og:title" content="Use-recursive-backtracking-to-solve-rat-in-a-maze-problem">
+<meta property="og:url" content="http://hihiko.zxy/2023/09/01/Use-recursive-backtracking-to-solve-rat-in-a-maze-problem/index.html">
 <meta property="og:site_name" content="My Private Arcady">
-<meta property="og:description" content="仅供学习交流，禁止二传二改，严禁商用。喜欢请前往pixiv上支持原作者。">
+<meta property="og:description" content="Problem and backgroundGiven a maze[][] of n * m matrix, a rat has to find a path from source to destination.  Use a recursive method to find the exit route of the maze. Backtracking is a versatile alg">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-12-04T18:08:35.000Z">
-<meta property="article:modified_time" content="2022-12-04T18:59:08.061Z">
+<meta property="article:published_time" content="2023-09-01T17:33:16.000Z">
+<meta property="article:modified_time" content="2023-09-01T17:43:42.644Z">
 <meta property="article:author" content="日">
-<meta property="article:tag" content="同人">
-<meta property="article:tag" content="汉化">
-<meta property="article:tag" content="龙珠">
-<meta property="article:tag" content="短笛">
-<meta property="article:tag" content="贝吉塔">
-<meta property="article:tag" content="贝吉短">
+<meta property="article:tag" content="Data Structures">
+<meta property="article:tag" content="CS">
+<meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>【自汉化】[贝吉短][かうす]贝吉P初夜漫画 - My Private Arcady</title>
+  <title>Use-recursive-backtracking-to-solve-rat-in-a-maze-problem - My Private Arcady</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -213,7 +210,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="【自汉化】[贝吉短][かうす]贝吉P初夜漫画"></span>
+            <span id="subtitle" data-typed-text="Use-recursive-backtracking-to-solve-rat-in-a-maze-problem"></span>
           
         </div>
 
@@ -224,8 +221,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-12-04 18:08" pubdate>
-          December 4, 2022 pm
+        <time datetime="2023-09-01 18:33" pubdate>
+          September 1, 2023 pm
         </time>
       </span>
     
@@ -236,7 +233,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.9k words
+          2.2k words
         
       </span>
     
@@ -247,7 +244,7 @@
         
         
         
-          33 mins
+          19 mins
         
       </span>
     
@@ -285,33 +282,29 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">【自汉化】[贝吉短][かうす]贝吉P初夜漫画</h1>
+            <h1 style="display: none">Use-recursive-backtracking-to-solve-rat-in-a-maze-problem</h1>
             
               <p class="note note-info">
                 
                   
-                    Last updated on December 4, 2022 pm
+                    Last updated on September 1, 2023 pm
                   
                 
               </p>
             
             
-              
-              <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="密码输入错误了喵" data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="22e2a6295d34d889852a2271d9b57c004743eaca80881fdb480b9e47654b9f57">5cf956e9a07fa6d051564523b71351cfd8c39e670b2d6c062711e04ff775f2493a4ef7d21065438d4fa8ad493537b3515c1d3524aac70ba11b1c8de3073381932cf6762cf8aef592eb60bd938dcea543b84bfb11f5c2cc760af29aef040027219f1e105106a34c14bef155d368cd3c2594c0b226638a67eb9a914565ed0119de70e0a6941c8db3a7db45aab3fab3d97c8d93e97b9ff970b5fb32c1f1a8d7924b44ea43f725e6bbe38b00549fb6a8342dc818afb010b176f88c08cc00872e941fb1a822b868d7d7b1d6e3aa5e07ee61500ff44e7a33ac8d574609f467ed44201a43f2c5fd74d441c7682bf1feca22098adeaae714adf55e200fa4f3b1f34ace7f4c243d711d47310a32f93ffa91af3ed219c55ca2ddeea29553a4c76850906273ab8aac6baa3a341d4082259b4ef1cd6a7fc8218652edfc096e67d3651b892ac4dec4a13590b6248218eb6d6045cb7a1c42f742095bfa1a5c44c165eed7695ca31b6e18eef8f25ca6767da4ab97c4c6250ff4250ec1832ae0cf4f9226057e19126cbfe4e8e54b5aed3ffc06ddbe7359217d8dfa1d249093535b5f57a2d06b7eb0a1928a77154766655ac17de53d344e34efe9423e40353c23dd5ce89e34124017169656b77ff47447d5372a319ebb1341bcfc181d5d677617ee76b1f653e4051787a13085919a7cb9c465e44a2059aecb00411cf263f0531f5d0f659302498ec8619ad43be677f16d718f4a4f6ec7be6e18dcd3cdbd46586b7505d74796f48b091dea4fdf71e923b9ad70f995610e2a43574871609415c73d87118fbb8b706899b11c116651eeec4de4314e32357818631e8470d6ed4db240dce8ce147c8aaea051a9367ac9597eedb403221f3906ef599dc9bc39c582050ac53056df542786e89f148f1195662fc654f0e38609272f993dfdc0a6665ce1788e9bd11df69d2b7de51397c7fbbf91454308416c7d0a2d488b85707d87c159610805a41437e687170ec4cba16c0822a0197f50f793a7e2e426d5c69c5fe56400b783d727fa6f9836cf8b4e7690fb11ff5e73edf6dee0b5f524a2c4b74b875b0f9ed8bc054352850f923b7ebbaeec46112f1f5f34a57714eccb8011f672c454df09522d08cf1a4b727e2f957f56bee52c01b7658e3f362d6de7cbfcabdc61114683da4620929aadc4f38f930a46d6f9ca67a085dd94e72754eb9553a835583485de7c08b7ba14a416a398f79eaeb005a32fd7828d3c140044a4f133201f678f5f185f1369fda28b1a9f3fcd28ae97a52678a26a776c5d1c0c58698d09fd06a782dc6395f3c99c4ef411f32cdaa31825b611559fe497e816b2ae5967dc1f027afd0a3f8ba5ff3cc27124f0a5eaf32f08e5478c5592d79e9368cc430915a25bc6598d26629716f58498575606e17dd65d7d7de6e7e901636931cbdfefaeae0a5184a90956909505f19cad3a08d9fa076982a841350b3d38bcc39effb8bfea722a5241e10fd75ae11056fad7ccc627ad86e666220e004583bb471cf2bcef271e0da25041399ff98e257d737584c39620d38a13ef88137b643044f78260e248badb2ed4797f08a07903e626b0ecec690880619d0d80220ac763c8fb769a4a98e791e61ec71b94e164d0b4bd46a022e76a98981a1633f6d30671318586898aedc3d38970bfd31f43e94927e87cbc6751485f9baafa7515cc1f2aac3737e9250e494b5db297f3d9ad01c770d38513064ed31b7dea840f3cb1ea0b1f45e8f916f27837d3e807be169e2806f2c8b3531d699c06a88adfd4ecff36ad407a8b1186dd9ad1b8b22a2ca2e8052ca512d3c24876a98176df2e67c2be775bbfa19b0fee4d9a59c1cc8d3c65d10e04e91d2e46425a356a7bf3821c5b18bbaeca0ee20cb601da05b7f9663e74c49bbc22de850556ee41913406ee41f07e38e2edc64c5d8be068dce04da6a282c2d720e8d8b583490c404f84854ab663f9a9b5f4da97f8e83402fe654c9baca831c9a629d8e29376f6a1532245e5c8fc1becc7d4b0d8718ce6fab11f3934f839e9871d905243930ee7f4199e75bda3375f8ffda8626ab3b7c199781a8e52d006464f37ac6b6b1c3b5d6427468570b6b0796e510cdf7b600b31041a204cada9bcfa62614b634f5e7429c5491f737ce4e32ce944d2ca96a10f0876522719ef455fa08c8b25a09b4ad306ce581e86c166ef9cf22a7e85f70af5310cf2032d1e492f20cb1667eedc0e3f18ca79092280946230745c0f80976aaa2b299ca9c5c82d5389acacb861f880cb9e98430f12651599670a1a3237a1fac9a762bbcc45791443c4feee745229a89660b0bafd0087ff8f9c6dd46b2c64b03b1ed70ae04ee0921d0af964bbb98915f359dbf6f40086cae08be62769b490298c797653cb950b9a3f1b600477e9b6c323b1a5ae702a2307e5a5bb1e2d0fc08e1d8eb6519931dd2c91a02eb40f7703ca8e971784ef2565fa96917b94372c988e7a10727092df9cca5e9791ab70d543fa62cd153e2e85156e0b6e0205f3e538ee8843cf0b5cfce35f3b9f387fe0ebdb6cbbb44227e66bcfc4046da887caaba8903e852138554c230acf083e81c51d2429cf7cf5fe30633ae3d6d0391563dd2d63c1ce493da386a9f242dd0bcf3bd9693e0f7702ba8dfdcd2416e2174793e3686b5fd48435d0b2cbc062e9a7deb536db59ce3056b877e9424a0bad0892c05802e41e0824d81f24fa4719ce462584df683dbd1497bfcb70c856aa408600da2d58736f881214316870eebc43b3884e</script>
-  <div class="hbe hbe-content">
-    <div class="hbe hbe-input hbe-input-default">
-      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
-      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入该作品的PID</span>
-      </label>
-    </div>
-  </div>
-</div>
-<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
-              
+              <div class="markdown-body">
+                
+                <h1 id="Problem-and-background"><a href="#Problem-and-background" class="headerlink" title="Problem and background"></a>Problem and background</h1><p>Given a maze[][] of n * m matrix, a rat has to find a path from source to destination. </p>
+<p>Use a recursive method to find the exit route of the maze.</p>
+<p><em>Backtracking is a versatile algorithm used to find solutions for computational problems, particularly constraint satisfaction problems. It works by progressively generating potential solutions and discarding them (“backtracking”) as soon as it becomes clear that they cannot lead to a correct answer.</em></p>
+<h1 id="Code"><a href="#Code" class="headerlink" title="Code:"></a>Code:</h1><h2 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm:"></a>Algorithm:</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * find a route simply without considering the shortest route</span><br><span class="hljs-comment"> *</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@param</span> map maze</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@param</span> i   current location x</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@param</span> j   current location y</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@return</span> if the current location is the exit</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">setWay</span><span class="hljs-params">(<span class="hljs-type">int</span>[][] map, <span class="hljs-type">int</span> i, <span class="hljs-type">int</span> j)</span> &#123;<br>    <span class="hljs-comment">// 1. started from (1,1)</span><br>    <span class="hljs-comment">// 2. exit at (6,5)</span><br>    <span class="hljs-comment">// 3. value 0 represents unexplored path, 1 represents walls,</span><br>    <span class="hljs-comment">//      2 represents a clear path, and 3 represents a dead end.</span><br>    <span class="hljs-comment">// 4. When exploring the maze, we follow the order of</span><br>    <span class="hljs-comment">//      down -&gt; right -&gt; up -&gt; left</span><br>    <span class="hljs-keyword">if</span> (map[<span class="hljs-number">6</span>][<span class="hljs-number">4</span>] == <span class="hljs-number">2</span>) &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;    <span class="hljs-comment">//find the exit</span><br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>        <span class="hljs-keyword">if</span> (map[i][j] == <span class="hljs-number">0</span>) &#123;    <span class="hljs-comment">// unexplored path</span><br>            map[i][j] = <span class="hljs-number">2</span>; <span class="hljs-comment">// assuming that this point is accessible.</span><br><br>            <span class="hljs-keyword">if</span> (setWay(map, i + <span class="hljs-number">1</span>, j)) &#123;   <span class="hljs-comment">//down</span><br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>            &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (setWay(map, i, j + <span class="hljs-number">1</span>)) &#123; <span class="hljs-comment">//right</span><br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>            &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (setWay(map, i - <span class="hljs-number">1</span>, j)) &#123; <span class="hljs-comment">//up</span><br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>            &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (setWay(map, i, j - <span class="hljs-number">1</span>)) &#123; <span class="hljs-comment">//left</span><br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-comment">//it is a dead end</span><br>                map[i][j] = <span class="hljs-number">3</span>;<br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>            &#125;<br>        &#125; <span class="hljs-keyword">else</span> &#123;    <span class="hljs-comment">// 1, 2 or 3, means explored</span><br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-              
+<h2 id="show-the-situation-of-maze"><a href="#show-the-situation-of-maze" class="headerlink" title="show the situation of maze"></a>show the situation of maze</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">showMap</span><span class="hljs-params">(<span class="hljs-type">int</span>[][] map)</span>&#123;<br>    <span class="hljs-comment">//output the maze</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">8</span>; i++) &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; <span class="hljs-number">7</span>; j++) &#123;<br>            System.out.print(map[i][j] + <span class="hljs-string">&quot; &quot;</span>);<br>        &#125;<br>        System.out.println();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="main-class-including-the-creation-of-a-maze"><a href="#main-class-including-the-creation-of-a-maze" class="headerlink" title="main class (including the creation of a maze):"></a>main class (including the creation of a maze):</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-comment">//Create a two-dimensional array to simulate the maze.</span><br>    <span class="hljs-type">int</span>[][] map = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-number">8</span>][<span class="hljs-number">7</span>];<br>    <span class="hljs-comment">// value 1 means the wall</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">7</span>; i++) &#123;<br>        map[<span class="hljs-number">0</span>][i] = <span class="hljs-number">1</span>;<br>        map[<span class="hljs-number">7</span>][i] = <span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">8</span>; i++) &#123;<br>        map[i][<span class="hljs-number">0</span>] = <span class="hljs-number">1</span>;<br>        map[i][<span class="hljs-number">6</span>] = <span class="hljs-number">1</span>;<br>    &#125;<br>    map[<span class="hljs-number">3</span>][<span class="hljs-number">1</span>] = <span class="hljs-number">1</span>;<br>    map[<span class="hljs-number">3</span>][<span class="hljs-number">2</span>] = <span class="hljs-number">1</span>;<br><br>    <span class="hljs-comment">//original map</span><br>    System.out.println(<span class="hljs-string">&quot;The original map:&quot;</span>);<br>    showMap(map);<br>    System.out.println(<span class="hljs-string">&quot;&quot;</span>);<br><br>    <span class="hljs-comment">//set way to exit</span><br>    setWay(map, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>);<br><br>    <span class="hljs-comment">//result</span><br>    System.out.println(<span class="hljs-string">&quot;Route: &quot;</span>);<br>    showMap(map);<br><br>&#125;<br></code></pre></td></tr></table></figure>
+                
+              </div>
             
             <hr/>
             <div>
@@ -324,6 +317,23 @@
 <span class="category-chains">
   
   
+    
+      <span class="category-chain">
+        
+  <a href="/categories/CS/" class="category-chain-item">CS</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/CS/Data-Structures/" class="category-chain-item">Data Structures</a>
+  
+  
+
+  
+
+      </span>
+    
+  
 </span>
 
     </div>
@@ -332,17 +342,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E5%90%8C%E4%BA%BA/">#同人</a>
+        <a href="/tags/Data-Structures/">#Data Structures</a>
       
-        <a href="/tags/%E6%B1%89%E5%8C%96/">#汉化</a>
+        <a href="/tags/CS/">#CS</a>
       
-        <a href="/tags/%E9%BE%99%E7%8F%A0/">#龙珠</a>
-      
-        <a href="/tags/%E7%9F%AD%E7%AC%9B/">#短笛</a>
-      
-        <a href="/tags/%E8%B4%9D%E5%90%89%E5%A1%94/">#贝吉塔</a>
-      
-        <a href="/tags/%E8%B4%9D%E5%90%89%E7%9F%AD/">#贝吉短</a>
+        <a href="/tags/Java/">#Java</a>
       
     </div>
   
@@ -354,8 +358,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>【自汉化】[贝吉短][かうす]贝吉P初夜漫画</div>
-      <div>http://hihiko.zxy/2022/12/04/78864118/</div>
+      <div>Use-recursive-backtracking-to-solve-rat-in-a-maze-problem</div>
+      <div>http://hihiko.zxy/2023/09/01/Use-recursive-backtracking-to-solve-rat-in-a-maze-problem/</div>
     </div>
     <div class="license-meta">
       
@@ -367,7 +371,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>December 4, 2022</div>
+          <div>September 1, 2023</div>
         </div>
       
       
@@ -406,6 +410,23 @@
 
 
 
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/01/25/Use-RPN-Reverse-Polish-Notation-to-implement-calculator/" title="Use RPN(Reverse Polish Notation) to implement calculator">
+                        <span class="hidden-mobile">Use RPN(Reverse Polish Notation) to implement calculator</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
               
             </div>
 
@@ -552,23 +573,6 @@
   
 
 
-
-
-  
-  <script defer>
-    if (document.getElementById('hbePass')) {
-      Fluid.utils.waitElementLoaded('hbe-prefix', function() {
-        var hbePrefix = document.querySelector('hbe-prefix');
-        hbePrefix.parentElement.classList.add('markdown-body');
-        Fluid.utils.retry(function() {
-          if (Fluid.boot && Fluid.boot.refresh) {
-            Fluid.boot.refresh();
-            return true;
-          }
-        }, 100, 10);
-      })
-    }
-  </script>
 
 
   

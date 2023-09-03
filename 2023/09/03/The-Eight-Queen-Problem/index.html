@@ -16,15 +16,15 @@
   <meta name="author" content="日">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Problem and backgroundGiven a maze[][] of n * m matrix, a rat has to find a path from source to destination.  Use a recursive method to find the exit route of the maze. Backtracking is a versatile alg">
+    <meta name="description" content="ProblemThe Eight Queens Problem is a classic chess puzzle that involves placing eight queens on a chessboard in such a way that no two queens threaten each other. This means that no two queens can sha">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Use-recursive-backtracking-to-solve-rat-in-a-maze-problem">
-<meta property="og:url" content="http://hihiko.zxy/2023/09/01/Use-recursive-backtracking-to-solve-rat-in-a-maze-problem/index.html">
+<meta property="og:title" content="The-Eight-Queen-Problem">
+<meta property="og:url" content="http://hihiko.zxy/2023/09/03/The-Eight-Queen-Problem/index.html">
 <meta property="og:site_name" content="My Private Arcady">
-<meta property="og:description" content="Problem and backgroundGiven a maze[][] of n * m matrix, a rat has to find a path from source to destination.  Use a recursive method to find the exit route of the maze. Backtracking is a versatile alg">
+<meta property="og:description" content="ProblemThe Eight Queens Problem is a classic chess puzzle that involves placing eight queens on a chessboard in such a way that no two queens threaten each other. This means that no two queens can sha">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-09-01T17:33:16.000Z">
-<meta property="article:modified_time" content="2023-09-01T17:43:42.644Z">
+<meta property="article:published_time" content="2023-09-03T18:09:40.000Z">
+<meta property="article:modified_time" content="2023-09-03T18:17:01.189Z">
 <meta property="article:author" content="日">
 <meta property="article:tag" content="Data Structures">
 <meta property="article:tag" content="CS">
@@ -33,7 +33,7 @@
   
   
   
-  <title>Use-recursive-backtracking-to-solve-rat-in-a-maze-problem - My Private Arcady</title>
+  <title>The-Eight-Queen-Problem - My Private Arcady</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -210,7 +210,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Use-recursive-backtracking-to-solve-rat-in-a-maze-problem"></span>
+            <span id="subtitle" data-typed-text="The-Eight-Queen-Problem"></span>
           
         </div>
 
@@ -221,8 +221,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-09-01 18:33" pubdate>
-          September 1, 2023 pm
+        <time datetime="2023-09-03 19:09" pubdate>
+          September 3, 2023 pm
         </time>
       </span>
     
@@ -233,7 +233,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.2k words
+          1.5k words
         
       </span>
     
@@ -244,7 +244,7 @@
         
         
         
-          19 mins
+          13 mins
         
       </span>
     
@@ -282,12 +282,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Use-recursive-backtracking-to-solve-rat-in-a-maze-problem</h1>
+            <h1 style="display: none">The-Eight-Queen-Problem</h1>
             
               <p class="note note-info">
                 
                   
-                    Last updated on September 1, 2023 pm
+                    Last updated on September 3, 2023 pm
                   
                 
               </p>
@@ -295,14 +295,9 @@
             
               <div class="markdown-body">
                 
-                <h1 id="Problem-and-background"><a href="#Problem-and-background" class="headerlink" title="Problem and background"></a>Problem and background</h1><p>Given a maze[][] of n * m matrix, a rat has to find a path from source to destination. </p>
-<p>Use a recursive method to find the exit route of the maze.</p>
-<p><em>Backtracking is a versatile algorithm used to find solutions for computational problems, particularly constraint satisfaction problems. It works by progressively generating potential solutions and discarding them (“backtracking”) as soon as it becomes clear that they cannot lead to a correct answer.</em></p>
-<h1 id="Code"><a href="#Code" class="headerlink" title="Code:"></a>Code:</h1><h2 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm:"></a>Algorithm:</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * find a route simply without considering the shortest route</span><br><span class="hljs-comment"> *</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@param</span> map maze</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@param</span> i   current location x</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@param</span> j   current location y</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@return</span> if the current location is the exit</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">setWay</span><span class="hljs-params">(<span class="hljs-type">int</span>[][] map, <span class="hljs-type">int</span> i, <span class="hljs-type">int</span> j)</span> &#123;<br>    <span class="hljs-comment">// 1. started from (1,1)</span><br>    <span class="hljs-comment">// 2. exit at (6,5)</span><br>    <span class="hljs-comment">// 3. value 0 represents unexplored path, 1 represents walls,</span><br>    <span class="hljs-comment">//      2 represents a clear path, and 3 represents a dead end.</span><br>    <span class="hljs-comment">// 4. When exploring the maze, we follow the order of</span><br>    <span class="hljs-comment">//      down -&gt; right -&gt; up -&gt; left</span><br>    <span class="hljs-keyword">if</span> (map[<span class="hljs-number">6</span>][<span class="hljs-number">4</span>] == <span class="hljs-number">2</span>) &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;    <span class="hljs-comment">//find the exit</span><br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>        <span class="hljs-keyword">if</span> (map[i][j] == <span class="hljs-number">0</span>) &#123;    <span class="hljs-comment">// unexplored path</span><br>            map[i][j] = <span class="hljs-number">2</span>; <span class="hljs-comment">// assuming that this point is accessible.</span><br><br>            <span class="hljs-keyword">if</span> (setWay(map, i + <span class="hljs-number">1</span>, j)) &#123;   <span class="hljs-comment">//down</span><br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>            &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (setWay(map, i, j + <span class="hljs-number">1</span>)) &#123; <span class="hljs-comment">//right</span><br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>            &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (setWay(map, i - <span class="hljs-number">1</span>, j)) &#123; <span class="hljs-comment">//up</span><br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>            &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (setWay(map, i, j - <span class="hljs-number">1</span>)) &#123; <span class="hljs-comment">//left</span><br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-comment">//it is a dead end</span><br>                map[i][j] = <span class="hljs-number">3</span>;<br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>            &#125;<br>        &#125; <span class="hljs-keyword">else</span> &#123;    <span class="hljs-comment">// 1, 2 or 3, means explored</span><br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<h2 id="show-the-situation-of-maze"><a href="#show-the-situation-of-maze" class="headerlink" title="show the situation of maze"></a>show the situation of maze</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">showMap</span><span class="hljs-params">(<span class="hljs-type">int</span>[][] map)</span>&#123;<br>    <span class="hljs-comment">//output the maze</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">8</span>; i++) &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; <span class="hljs-number">7</span>; j++) &#123;<br>            System.out.print(map[i][j] + <span class="hljs-string">&quot; &quot;</span>);<br>        &#125;<br>        System.out.println();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<h2 id="main-class-including-the-creation-of-a-maze"><a href="#main-class-including-the-creation-of-a-maze" class="headerlink" title="main class (including the creation of a maze):"></a>main class (including the creation of a maze):</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-comment">//Create a two-dimensional array to simulate the maze.</span><br>    <span class="hljs-type">int</span>[][] map = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-number">8</span>][<span class="hljs-number">7</span>];<br>    <span class="hljs-comment">// value 1 means the wall</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">7</span>; i++) &#123;<br>        map[<span class="hljs-number">0</span>][i] = <span class="hljs-number">1</span>;<br>        map[<span class="hljs-number">7</span>][i] = <span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">8</span>; i++) &#123;<br>        map[i][<span class="hljs-number">0</span>] = <span class="hljs-number">1</span>;<br>        map[i][<span class="hljs-number">6</span>] = <span class="hljs-number">1</span>;<br>    &#125;<br>    map[<span class="hljs-number">3</span>][<span class="hljs-number">1</span>] = <span class="hljs-number">1</span>;<br>    map[<span class="hljs-number">3</span>][<span class="hljs-number">2</span>] = <span class="hljs-number">1</span>;<br><br>    <span class="hljs-comment">//original map</span><br>    System.out.println(<span class="hljs-string">&quot;The original map:&quot;</span>);<br>    showMap(map);<br>    System.out.println(<span class="hljs-string">&quot;&quot;</span>);<br><br>    <span class="hljs-comment">//set way to exit</span><br>    setWay(map, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>);<br><br>    <span class="hljs-comment">//result</span><br>    System.out.println(<span class="hljs-string">&quot;Route: &quot;</span>);<br>    showMap(map);<br><br>&#125;<br></code></pre></td></tr></table></figure>
+                <h1 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h1><p>The Eight Queens Problem is a classic chess puzzle that involves placing eight queens on a chessboard in such a way that no two queens threaten each other. This means that no two queens can share the same row, column, or diagonal.</p>
+<p>The challenge is to find all possible solutions to this problem.</p>
+<h1 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">EightQueens</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">max</span> <span class="hljs-operator">=</span> <span class="hljs-number">8</span>;<br>    <span class="hljs-comment">//Define an array to store the positions where the queens are placed.</span><br>    <span class="hljs-type">int</span>[] array = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[max];<br>    <span class="hljs-comment">//count the number of methods</span><br>    <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> <span class="hljs-variable">count</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">EightQueens</span> <span class="hljs-variable">eightQueens</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">EightQueens</span>();<br>        eightQueens.place(<span class="hljs-number">0</span>);<br>        System.out.println(<span class="hljs-string">&quot;There are &quot;</span> + count + <span class="hljs-string">&quot; kinds of methods to solve the eight queens problem.&quot;</span>);<br>    &#125;<br><br>     <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * Place chess pieces in a recursive manner.</span><br><span class="hljs-comment">     *</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> n the nth queen</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">place</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span> &#123;<br>        <span class="hljs-keyword">if</span> (n == max) &#123;<br>            printResult();<br>            count++;<br>            <span class="hljs-keyword">return</span>;<br>        &#125;<br><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; max; i++) &#123;<br>            array[n] = i;<br>            <span class="hljs-keyword">if</span> (ifNotConflict(n)) &#123;<br>                place(n + <span class="hljs-number">1</span>);<br>            &#125;<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * Check whether the newly placed chess piece conflicts with the previous ones.</span><br><span class="hljs-comment">     * </span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> n the nth queen</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@return</span> if the queen could be placed at this place</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">ifNotConflict</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span> &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>            <span class="hljs-keyword">if</span> (array[i] == array[n] || <span class="hljs-comment">// on the same coloum</span><br>                    Math.abs(n - i) == Math.abs(array[n] - array[i])) &#123;  <span class="hljs-comment">// on the same diagonal</span><br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">printResult</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; array.length; i++) &#123;<br>            System.out.print(array[i] + <span class="hljs-string">&quot; &quot;</span>);<br>        &#125;<br>        System.out.println();<br>    &#125;<br><br>&#125;<br></code></pre></td></tr></table></figure>
                 
               </div>
             
@@ -358,8 +353,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Use-recursive-backtracking-to-solve-rat-in-a-maze-problem</div>
-      <div>http://hihiko.zxy/2023/09/01/Use-recursive-backtracking-to-solve-rat-in-a-maze-problem/</div>
+      <div>The-Eight-Queen-Problem</div>
+      <div>http://hihiko.zxy/2023/09/03/The-Eight-Queen-Problem/</div>
     </div>
     <div class="license-meta">
       
@@ -371,7 +366,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>September 1, 2023</div>
+          <div>September 3, 2023</div>
         </div>
       
       
@@ -415,18 +410,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/09/03/The-Eight-Queen-Problem/" title="The-Eight-Queen-Problem">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">The-Eight-Queen-Problem</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/01/25/Use-RPN-Reverse-Polish-Notation-to-implement-calculator/" title="Use RPN(Reverse Polish Notation) to implement calculator">
-                        <span class="hidden-mobile">Use RPN(Reverse Polish Notation) to implement calculator</span>
+                      <a href="/2023/09/01/Use-recursive-backtracking-to-solve-rat-in-a-maze-problem/" title="Use-recursive-backtracking-to-solve-rat-in-a-maze-problem">
+                        <span class="hidden-mobile">Use-recursive-backtracking-to-solve-rat-in-a-maze-problem</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

@@ -4,7 +4,38 @@
   
   
   <entry>
-    <title>The-Eight-Queen-Problem</title>
+    <title>Sort Algorithm - Bubble Sort</title>
+    <link href="/2023/09/04/Sort-Algorithm-Bubble-Sort/"/>
+    <url>/2023/09/04/Sort-Algorithm-Bubble-Sort/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Definition"><a href="#Definition" class="headerlink" title="Definition:"></a>Definition:</h1><p>Bubble sort is a simple sorting algorithm that repeatedly steps through the list to be sorted, compares adjacent elements, and swaps them if they are in the wrong order. It continues these steps until the entire list is sorted. While straightforward, it’s not very efficient for large lists due to its O(n^2) time complexity.</p><h1 id="Code"><a href="#Code" class="headerlink" title="Code:"></a>Code:</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">BubbleSort</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">int</span>[] arr = &#123;<span class="hljs-number">3</span>, <span class="hljs-number">9</span>, -<span class="hljs-number">1</span>, <span class="hljs-number">10</span>, <span class="hljs-number">2</span>&#125;;<br><br>        bubbleSort(arr);<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">bubbleSort</span><span class="hljs-params">(<span class="hljs-type">int</span>[] arr)</span> &#123;<br>        <br>        <span class="hljs-comment">// Initialize a flag to track if any swaps were made</span><br>        <span class="hljs-type">boolean</span> <span class="hljs-variable">flag</span> <span class="hljs-operator">=</span> <span class="hljs-literal">false</span>;<br><br>        <span class="hljs-comment">// Temporary variable for swapping elements</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br><br>        <span class="hljs-comment">// Loop through the array</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; arr.length; i++) &#123;<br>            <span class="hljs-comment">// Iterate through the array up to the unsorted portion</span><br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; arr.length - <span class="hljs-number">1</span> - i; j++) &#123;<br>                <span class="hljs-comment">// Compare adjacent elements and swap if they are out of order</span><br>                <span class="hljs-keyword">if</span> (arr[j] &gt; arr[j + <span class="hljs-number">1</span>]) &#123;<br>                    flag = <span class="hljs-literal">true</span>;    <span class="hljs-comment">// Set the flag to indicate a swap</span><br>                    temp = arr[j];<br>                    arr[j] = arr[j + <span class="hljs-number">1</span>];<br>                    arr[j + <span class="hljs-number">1</span>] = temp;<br>                &#125;<br>            &#125;<br><br>            <span class="hljs-comment">// If no swaps were made in this pass, the array is already sorted</span><br>            <span class="hljs-keyword">if</span> (!flag) &#123;<br>                <span class="hljs-keyword">break</span>;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                flag = <span class="hljs-literal">false</span>;  <span class="hljs-comment">// Reset the flag for the next pass</span><br>            &#125;<br>        &#125;<br><br>        <span class="hljs-comment">// Print the sorted array</span><br>        System.out.println(Arrays.toString(arr));<br><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>CS</category>
+      
+      <category>Data Structures</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Data Structures</tag>
+      
+      <tag>CS</tag>
+      
+      <tag>Java</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>The Eight Queen Problem</title>
     <link href="/2023/09/03/The-Eight-Queen-Problem/"/>
     <url>/2023/09/03/The-Eight-Queen-Problem/</url>
     
@@ -35,7 +66,7 @@
   
   
   <entry>
-    <title>Use-recursive-backtracking-to-solve-rat-in-a-maze-problem</title>
+    <title>Use recursive backtracking to solve rat in a maze problem</title>
     <link href="/2023/09/01/Use-recursive-backtracking-to-solve-rat-in-a-maze-problem/"/>
     <url>/2023/09/01/Use-recursive-backtracking-to-solve-rat-in-a-maze-problem/</url>
     

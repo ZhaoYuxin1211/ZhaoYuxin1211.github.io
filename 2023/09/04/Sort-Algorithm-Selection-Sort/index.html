@@ -16,15 +16,15 @@
   <meta name="author" content="日">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Definition:Bubble sort is a simple sorting algorithm that repeatedly steps through the list to be sorted, compares adjacent elements, and swaps them if they are in the wrong order. It continues these">
+    <meta name="description" content="Definition:Selection sort is a simple comparison-based sorting algorithm that repeatedly selects the minimum element from the unsorted part of the array and places it at the beginning. It works by div">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Sort Algorithm - Bubble Sort">
-<meta property="og:url" content="http://hihiko.zxy/2023/09/04/Sort-Algorithm-Bubble-Sort/index.html">
+<meta property="og:title" content="Sort Algorithm - Selection Sort">
+<meta property="og:url" content="http://hihiko.zxy/2023/09/04/Sort-Algorithm-Selection-Sort/index.html">
 <meta property="og:site_name" content="My Private Arcady">
-<meta property="og:description" content="Definition:Bubble sort is a simple sorting algorithm that repeatedly steps through the list to be sorted, compares adjacent elements, and swaps them if they are in the wrong order. It continues these">
+<meta property="og:description" content="Definition:Selection sort is a simple comparison-based sorting algorithm that repeatedly selects the minimum element from the unsorted part of the array and places it at the beginning. It works by div">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-09-04T16:08:15.000Z">
-<meta property="article:modified_time" content="2023-09-04T16:12:00.720Z">
+<meta property="article:published_time" content="2023-09-04T19:23:10.000Z">
+<meta property="article:modified_time" content="2023-09-04T19:27:15.037Z">
 <meta property="article:author" content="日">
 <meta property="article:tag" content="Data Structures">
 <meta property="article:tag" content="CS">
@@ -33,7 +33,7 @@
   
   
   
-  <title>Sort Algorithm - Bubble Sort - My Private Arcady</title>
+  <title>Sort Algorithm - Selection Sort - My Private Arcady</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -210,7 +210,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Sort Algorithm - Bubble Sort"></span>
+            <span id="subtitle" data-typed-text="Sort Algorithm - Selection Sort"></span>
           
         </div>
 
@@ -221,7 +221,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-09-04 17:08" pubdate>
+        <time datetime="2023-09-04 20:23" pubdate>
           September 4, 2023 pm
         </time>
       </span>
@@ -233,7 +233,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.2k words
+          1.1k words
         
       </span>
     
@@ -244,7 +244,7 @@
         
         
         
-          10 mins
+          9 mins
         
       </span>
     
@@ -282,7 +282,7 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Sort Algorithm - Bubble Sort</h1>
+            <h1 style="display: none">Sort Algorithm - Selection Sort</h1>
             
               <p class="note note-info">
                 
@@ -295,8 +295,8 @@
             
               <div class="markdown-body">
                 
-                <h1 id="Definition"><a href="#Definition" class="headerlink" title="Definition:"></a>Definition:</h1><p>Bubble sort is a simple sorting algorithm that repeatedly steps through the list to be sorted, compares adjacent elements, and swaps them if they are in the wrong order. It continues these steps until the entire list is sorted. While straightforward, it’s not very efficient for large lists due to its O(n^2) time complexity.</p>
-<h1 id="Code"><a href="#Code" class="headerlink" title="Code:"></a>Code:</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">BubbleSort</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">int</span>[] arr = &#123;<span class="hljs-number">3</span>, <span class="hljs-number">9</span>, -<span class="hljs-number">1</span>, <span class="hljs-number">10</span>, <span class="hljs-number">2</span>&#125;;<br><br>        bubbleSort(arr);<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">bubbleSort</span><span class="hljs-params">(<span class="hljs-type">int</span>[] arr)</span> &#123;<br>        <br>        <span class="hljs-comment">// Initialize a flag to track if any swaps were made</span><br>        <span class="hljs-type">boolean</span> <span class="hljs-variable">flag</span> <span class="hljs-operator">=</span> <span class="hljs-literal">false</span>;<br><br>        <span class="hljs-comment">// Temporary variable for swapping elements</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br><br>        <span class="hljs-comment">// Loop through the array</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; arr.length; i++) &#123;<br>            <span class="hljs-comment">// Iterate through the array up to the unsorted portion</span><br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; arr.length - <span class="hljs-number">1</span> - i; j++) &#123;<br>                <span class="hljs-comment">// Compare adjacent elements and swap if they are out of order</span><br>                <span class="hljs-keyword">if</span> (arr[j] &gt; arr[j + <span class="hljs-number">1</span>]) &#123;<br>                    flag = <span class="hljs-literal">true</span>;    <span class="hljs-comment">// Set the flag to indicate a swap</span><br>                    temp = arr[j];<br>                    arr[j] = arr[j + <span class="hljs-number">1</span>];<br>                    arr[j + <span class="hljs-number">1</span>] = temp;<br>                &#125;<br>            &#125;<br><br>            <span class="hljs-comment">// If no swaps were made in this pass, the array is already sorted</span><br>            <span class="hljs-keyword">if</span> (!flag) &#123;<br>                <span class="hljs-keyword">break</span>;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                flag = <span class="hljs-literal">false</span>;  <span class="hljs-comment">// Reset the flag for the next pass</span><br>            &#125;<br>        &#125;<br><br>        <span class="hljs-comment">// Print the sorted array</span><br>        System.out.println(Arrays.toString(arr));<br><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+                <h1 id="Definition"><a href="#Definition" class="headerlink" title="Definition:"></a>Definition:</h1><p>Selection sort is a simple comparison-based sorting algorithm that repeatedly selects the minimum element from the unsorted part of the array and places it at the beginning. It works by dividing the input array into two parts: the sorted and the unsorted portions. While straightforward, it has a time complexity of O(n^2), making it inefficient for large datasets.</p>
+<h1 id="Code"><a href="#Code" class="headerlink" title="Code:"></a>Code:</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">SelectionSort</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-comment">// Create an array of integers</span><br>        <span class="hljs-type">int</span>[] arr = &#123;<span class="hljs-number">101</span>, <span class="hljs-number">34</span>, <span class="hljs-number">99</span>, <span class="hljs-number">1</span>&#125;;<br><br>        <span class="hljs-comment">// Call the selectionSort function to sort the array</span><br>        selectionSort(arr);<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">selectionSort</span><span class="hljs-params">(<span class="hljs-type">int</span>[] arr)</span> &#123;<br>        <span class="hljs-comment">// Iterate through the array elements</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; arr.length - <span class="hljs-number">1</span>; i++) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">minIndex</span> <span class="hljs-operator">=</span> i;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">minNum</span> <span class="hljs-operator">=</span> arr[i];<br><br>            <span class="hljs-comment">// Find the minimum element in the unsorted part of the array</span><br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> i + <span class="hljs-number">1</span>; j &lt; arr.length; j++) &#123;<br>                <span class="hljs-keyword">if</span> (minNum &gt; arr[j]) &#123;<br>                    minNum = arr[j];<br>                    minIndex = j;<br>                &#125;<br>            &#125;<br><br>            <span class="hljs-comment">// Swap the minimum element with the current element (if needed)</span><br>            <span class="hljs-keyword">if</span> (minIndex != i) &#123;<br>                arr[minIndex] = arr[i];<br>                arr[i] = minNum;<br>            &#125;<br>        &#125;<br><br>        <span class="hljs-comment">// Print the sorted array</span><br>        System.out.println(Arrays.toString(arr));<br>    &#125;<br><br>&#125;<br></code></pre></td></tr></table></figure>
 
 
                 
@@ -354,8 +354,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Sort Algorithm - Bubble Sort</div>
-      <div>http://hihiko.zxy/2023/09/04/Sort-Algorithm-Bubble-Sort/</div>
+      <div>Sort Algorithm - Selection Sort</div>
+      <div>http://hihiko.zxy/2023/09/04/Sort-Algorithm-Selection-Sort/</div>
     </div>
     <div class="license-meta">
       
@@ -411,18 +411,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/09/04/Sort-Algorithm-Selection-Sort/" title="Sort Algorithm - Selection Sort">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Sort Algorithm - Selection Sort</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/09/03/The-Eight-Queen-Problem/" title="The Eight Queen Problem">
-                        <span class="hidden-mobile">The Eight Queen Problem</span>
+                      <a href="/2023/09/04/Sort-Algorithm-Bubble-Sort/" title="Sort Algorithm - Bubble Sort">
+                        <span class="hidden-mobile">Sort Algorithm - Bubble Sort</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

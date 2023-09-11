@@ -4,7 +4,38 @@
   
     
     <entry>
-      <title>Sort Algorithm Shell Sort</title>
+      <title>Sort-Algorithm-Quick-Sort</title>
+      <link href="/2023/09/11/Sort-Algorithm-Quick-Sort/"/>
+      <url>/2023/09/11/Sort-Algorithm-Quick-Sort/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h1><p>Quick Sort is a highly efficient, comparison-based sorting algorithm that uses a divide-and-conquer strategy. It selects a pivot element from the array and partitions the elements into two subarrays: elements less than the pivot and elements greater than the pivot. It then recursively sorts these subarrays, providing an average-case time complexity of O(n log n), making it one of the fastest sorting algorithms in practice.</p><h1 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">QuickSort</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-comment">// Create an integer array</span><br>        <span class="hljs-type">int</span>[] arr = &#123;<span class="hljs-number">98</span>, <span class="hljs-number">0</span>, <span class="hljs-number">5</span>, -<span class="hljs-number">9</span>, <span class="hljs-number">132</span>, <span class="hljs-number">3</span>, -<span class="hljs-number">7</span>, <span class="hljs-number">0</span>&#125;;<br><br>        <span class="hljs-comment">// Call the quickSort function to sort the array</span><br>        quickSort(arr, <span class="hljs-number">0</span>, arr.length - <span class="hljs-number">1</span>);<br><br>        <span class="hljs-comment">// Print the sorted array</span><br>        System.out.println(Arrays.toString(arr));<br>    &#125;<br><br>    <span class="hljs-comment">// Quick Sort function</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">quickSort</span><span class="hljs-params">(<span class="hljs-type">int</span>[] arr, <span class="hljs-type">int</span> left, <span class="hljs-type">int</span> right)</span> &#123;<br>        <span class="hljs-comment">// Define pointers and choose a pivot element</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">l</span> <span class="hljs-operator">=</span> left;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">r</span> <span class="hljs-operator">=</span> right;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">pivot</span> <span class="hljs-operator">=</span> arr[(left + right) / <span class="hljs-number">2</span>];<br><br>        <span class="hljs-type">int</span> temp;<br><br>        <span class="hljs-comment">// Partitioning loop</span><br>        <span class="hljs-keyword">while</span> (l &lt;= r) &#123;<br>            <span class="hljs-comment">// Find elements on the left that are greater than the pivot</span><br>            <span class="hljs-keyword">while</span> (arr[l] &lt; pivot) &#123;<br>                l++;<br>            &#125;<br>            <span class="hljs-comment">// Find elements on the right that are smaller than the pivot</span><br>            <span class="hljs-keyword">while</span> (arr[r] &gt; pivot) &#123;<br>                r--;<br>            &#125;<br><br>            <span class="hljs-keyword">if</span> (l &lt;= r) &#123;<br>                <span class="hljs-comment">// Swap the elements at l and r</span><br>                temp = arr[r];<br>                arr[r] = arr[l];<br>                arr[l] = temp;<br><br>                <span class="hljs-comment">// Move the pointers</span><br>                l++;<br>                r--;<br>            &#125;<br>        &#125;<br><br>        <span class="hljs-comment">// Recursively sort the left and right subarrays</span><br>        <span class="hljs-keyword">if</span> (left &lt; r) &#123;<br>            quickSort(arr, left, r);<br>        &#125;<br><br>        <span class="hljs-keyword">if</span> (right &gt; l) &#123;<br>            quickSort(arr, l, right);<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> CS </category>
+          
+          <category> Data Structures </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Data Structures </tag>
+            
+            <tag> CS </tag>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Sort Algorithm - Shell Sort</title>
       <link href="/2023/09/05/Sort-Algorithm-Shell-Sort/"/>
       <url>/2023/09/05/Sort-Algorithm-Shell-Sort/</url>
       
@@ -35,7 +66,7 @@
     
     
     <entry>
-      <title>Sort Algorithm Insertion Sort</title>
+      <title>Sort Algorithm - Insertion Sort</title>
       <link href="/2023/09/05/Sort-Algorithm-Insertion-Sort/"/>
       <url>/2023/09/05/Sort-Algorithm-Insertion-Sort/</url>
       

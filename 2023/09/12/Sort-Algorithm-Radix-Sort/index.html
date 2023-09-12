@@ -16,15 +16,15 @@
   <meta name="author" content="日">
   <meta name="keywords" content="">
   
-    <meta name="description" content="DefinitionMerge Sort is a comparison-based, divide-and-conquer sorting algorithm known for its stability and efficiency. It works by dividing the unsorted array into smaller subarrays until each subar">
+    <meta name="description" content="DefinitionRadix Sort is a non-comparative sorting algorithm that processes the elements of an array by grouping them based on individual digits or place values. It starts by sorting elements based on">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Sort Algorithm - Merge Sort">
-<meta property="og:url" content="http://hihiko.zxy/2023/09/12/Sort-Algorithm-Merge-Sort/index.html">
+<meta property="og:title" content="Sort Algorithm - Radix Sort">
+<meta property="og:url" content="http://hihiko.zxy/2023/09/12/Sort-Algorithm-Radix-Sort/index.html">
 <meta property="og:site_name" content="My Private Arcady">
-<meta property="og:description" content="DefinitionMerge Sort is a comparison-based, divide-and-conquer sorting algorithm known for its stability and efficiency. It works by dividing the unsorted array into smaller subarrays until each subar">
+<meta property="og:description" content="DefinitionRadix Sort is a non-comparative sorting algorithm that processes the elements of an array by grouping them based on individual digits or place values. It starts by sorting elements based on">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-09-12T16:08:08.000Z">
-<meta property="article:modified_time" content="2023-09-12T16:13:24.945Z">
+<meta property="article:published_time" content="2023-09-12T21:19:25.000Z">
+<meta property="article:modified_time" content="2023-09-12T21:22:02.447Z">
 <meta property="article:author" content="日">
 <meta property="article:tag" content="Data Structures">
 <meta property="article:tag" content="CS">
@@ -33,7 +33,7 @@
   
   
   
-  <title>Sort Algorithm - Merge Sort - My Private Arcady</title>
+  <title>Sort Algorithm - Radix Sort - My Private Arcady</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -210,7 +210,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Sort Algorithm - Merge Sort"></span>
+            <span id="subtitle" data-typed-text="Sort Algorithm - Radix Sort"></span>
           
         </div>
 
@@ -221,7 +221,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-09-12 17:08" pubdate>
+        <time datetime="2023-09-12 22:19" pubdate>
           September 12, 2023 pm
         </time>
       </span>
@@ -233,7 +233,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.2k words
+          2k words
         
       </span>
     
@@ -244,7 +244,7 @@
         
         
         
-          19 mins
+          17 mins
         
       </span>
     
@@ -282,7 +282,7 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Sort Algorithm - Merge Sort</h1>
+            <h1 style="display: none">Sort Algorithm - Radix Sort</h1>
             
               <p class="note note-info">
                 
@@ -295,10 +295,8 @@
             
               <div class="markdown-body">
                 
-                <h1 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h1><p>Merge Sort is a comparison-based, divide-and-conquer sorting algorithm known for its stability and efficiency. It works by dividing the unsorted array into smaller subarrays until each subarray contains only one element. It then merges these subarrays back together while sorting them, resulting in a sorted array. Merge Sort has a consistent time complexity of O(n log n), making it a reliable choice for sorting large datasets.</p>
-<h1 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MergeSort</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-comment">// Create an integer array to be sorted</span><br>        <span class="hljs-type">int</span>[] arr = &#123;<span class="hljs-number">8</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">1</span>&#125;;<br><br>        <span class="hljs-comment">// Create a temporary array to assist in the sorting process</span><br>        <span class="hljs-type">int</span>[] temp = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[arr.length];<br><br>        <span class="hljs-comment">// Call the mergeSort function to sort the array</span><br>        mergeSort(arr, <span class="hljs-number">0</span>, arr.length - <span class="hljs-number">1</span>, temp);<br><br>        <span class="hljs-comment">// Print the sorted array</span><br>        System.out.println(Arrays.toString(arr));<br>    &#125;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * Recursive merge sort function.</span><br><span class="hljs-comment">     *</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> arr   The array to be sorted</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> left  The left index of the current subarray</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> right The right index of the current subarray</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> temp  A temporary array for merging</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">mergeSort</span><span class="hljs-params">(<span class="hljs-type">int</span>[] arr, <span class="hljs-type">int</span> left, <span class="hljs-type">int</span> right, <span class="hljs-type">int</span>[] temp)</span> &#123;<br>        <span class="hljs-keyword">if</span> (left &lt; right) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">mid</span> <span class="hljs-operator">=</span> (left + right) / <span class="hljs-number">2</span>;<br>            <span class="hljs-comment">// Recursively sort the left and right halves</span><br>            mergeSort(arr, left, mid, temp);<br>            mergeSort(arr, mid + <span class="hljs-number">1</span>, right, temp);<br>            <span class="hljs-comment">// Merge the sorted halves</span><br>            merge(arr, left, mid, right, temp);<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * Merge two subarrays into a sorted array.</span><br><span class="hljs-comment">     *</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> arr   The array to be sorted</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> left  Pointer to the left of the subarray</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> mid   Pointer to the middle of the subarray</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> right Pointer to the right of the subarray</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> temp  Temporary array for merging</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">merge</span><span class="hljs-params">(<span class="hljs-type">int</span>[] arr, <span class="hljs-type">int</span> left, <span class="hljs-type">int</span> mid, <span class="hljs-type">int</span> right, <span class="hljs-type">int</span>[] temp)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> left;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> mid + <span class="hljs-number">1</span>;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">t</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br><br>        <span class="hljs-keyword">while</span> (i &lt;= mid &amp;&amp; j &lt;= right) &#123;<br>            <span class="hljs-comment">// Compare elements from both halves and merge them in sorted order</span><br>            <span class="hljs-keyword">if</span> (arr[i] &lt;= arr[j]) &#123;<br>                temp[t] = arr[i];<br>                t++;<br>                i++;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                temp[t] = arr[j];<br>                t++;<br>                j++;<br>            &#125;<br>        &#125;<br><br>        <span class="hljs-comment">// Copy any remaining elements from the left half</span><br>        <span class="hljs-keyword">while</span> (i &lt;= mid) &#123;<br>            temp[t] = arr[i];<br>            t++;<br>            i++;<br>        &#125;<br><br>        <span class="hljs-comment">// Copy any remaining elements from the right half</span><br>        <span class="hljs-keyword">while</span> (j &lt;= right) &#123;<br>            temp[t] = arr[j];<br>            t++;<br>            j++;<br>        &#125;<br><br>        t = <span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">tempLeft</span> <span class="hljs-operator">=</span> left;<br><br>        <span class="hljs-comment">// Copy the sorted values from the temporary array back into the original array</span><br>        <span class="hljs-keyword">while</span> (tempLeft &lt;= right) &#123;<br>            arr[tempLeft] = temp[t];<br>            t++;<br>            tempLeft++;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-
+                <h1 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h1><p>Radix Sort is a non-comparative sorting algorithm that processes the elements of an array by grouping them based on individual digits or place values. It starts by sorting elements based on the least significant digit and gradually moves to the most significant digit. Radix Sort is efficient for integers or fixed-length strings and has a time complexity of O(nk) in the worst case, where n is the number of elements and k is the number of digits or the maximum length of the strings. It’s often used for sorting numbers in base 10 or other fixed-radix representations.</p>
+<h1 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">RadixSort</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-comment">// Create an integer array to be sorted</span><br>        <span class="hljs-type">int</span>[] arr = &#123;<span class="hljs-number">53</span>, <span class="hljs-number">8</span>, <span class="hljs-number">32</span>, <span class="hljs-number">58</span>, <span class="hljs-number">962</span>, <span class="hljs-number">14</span>, <span class="hljs-number">215</span>&#125;;<br><br>        <span class="hljs-comment">// Call the radixSort function to sort the array</span><br>        radixSort(arr);<br><br>        <span class="hljs-comment">// Print the sorted array</span><br>        System.out.println(Arrays.toString(arr));<br>    &#125;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * Radix Sort algorithm to sort an integer array.</span><br><span class="hljs-comment">     *</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> arr The array to be sorted</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">radixSort</span><span class="hljs-params">(<span class="hljs-type">int</span>[] arr)</span> &#123;<br>        <span class="hljs-comment">// Find the maximum number in the array to determine the maximum number of digits</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">max</span> <span class="hljs-operator">=</span> arr[<span class="hljs-number">0</span>];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt; arr.length; i++) &#123;<br>            <span class="hljs-keyword">if</span> (arr[i] &gt; max) &#123;<br>                max = arr[i];<br>            &#125;<br>        &#125;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">maxLength</span> <span class="hljs-operator">=</span> (max + <span class="hljs-string">&quot;&quot;</span>).length();<br><br>        <span class="hljs-comment">// Create buckets for each digit (0-9)</span><br>        <span class="hljs-type">int</span>[][] bucket = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-number">10</span>][arr.length];<br><br>        <span class="hljs-comment">// Keep track of the number of elements in each bucket</span><br>        <span class="hljs-type">int</span>[] bucketElementCounts = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-number">10</span>];<br><br>        <span class="hljs-comment">// Iterate through each digit place (from least significant to most significant)</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>, n = <span class="hljs-number">1</span>; i &lt; maxLength; i++, n *= <span class="hljs-number">10</span>) &#123;<br>            <span class="hljs-comment">// Distribute elements into buckets based on the current digit</span><br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> value : arr) &#123;<br>                <span class="hljs-type">int</span> <span class="hljs-variable">digitOfElement</span> <span class="hljs-operator">=</span> value / n % <span class="hljs-number">10</span>;<br>                bucket[digitOfElement][bucketElementCounts[digitOfElement]] = value;<br>                bucketElementCounts[digitOfElement]++;<br>            &#125;<br><br>            <span class="hljs-comment">// Reconstruct the array by taking elements from buckets</span><br>            <span class="hljs-type">int</span> <span class="hljs-variable">index</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; bucketElementCounts.length; j++) &#123;<br>                <span class="hljs-keyword">if</span> (bucketElementCounts[j] != <span class="hljs-number">0</span>) &#123;<br>                    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">k</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; k &lt; bucketElementCounts[j]; k++) &#123;<br>                        arr[index] = bucket[j][k];<br>                        index++;<br>                    &#125;<br>                &#125;<br>                <span class="hljs-comment">// Reset the bucket element count</span><br>                bucketElementCounts[j] = <span class="hljs-number">0</span>;<br>            &#125;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
                 
               </div>
             
@@ -354,8 +352,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Sort Algorithm - Merge Sort</div>
-      <div>http://hihiko.zxy/2023/09/12/Sort-Algorithm-Merge-Sort/</div>
+      <div>Sort Algorithm - Radix Sort</div>
+      <div>http://hihiko.zxy/2023/09/12/Sort-Algorithm-Radix-Sort/</div>
     </div>
     <div class="license-meta">
       
@@ -411,18 +409,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/09/12/Sort-Algorithm-Radix-Sort/" title="Sort Algorithm - Radix Sort">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Sort Algorithm - Radix Sort</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/09/11/Sort-Algorithm-Quick-Sort/" title="Sort Algorithm - Quick Sort">
-                        <span class="hidden-mobile">Sort Algorithm - Quick Sort</span>
+                      <a href="/2023/09/12/Sort-Algorithm-Merge-Sort/" title="Sort Algorithm - Merge Sort">
+                        <span class="hidden-mobile">Sort Algorithm - Merge Sort</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

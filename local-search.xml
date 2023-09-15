@@ -4,6 +4,37 @@
   
   
   <entry>
+    <title>Search Algorithm - Interpolation Search</title>
+    <link href="/2023/09/15/Search-Algorithm-Interpolation-Search/"/>
+    <url>/2023/09/15/Search-Algorithm-Interpolation-Search/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h1><p>Interpolation Search is an efficient searching algorithm used to find a specific element within a sorted collection, such as an array. It estimates the likely position of the target element based on its value relative to the minimum and maximum values in the array. By using this estimation, it reduces the search space significantly with each iteration, resulting in faster search times compared to linear search algorithms. However, it requires that the data be uniformly distributed for optimal performance.</p><h1 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">InterpolationSearch</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-comment">// Create a sorted integer array to search within</span><br>        <span class="hljs-type">int</span>[] arr = &#123;<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>&#125;;<br><br>        <span class="hljs-comment">// Call the interpolationSearch function to search for the target element (2) in the array</span><br>        System.out.println(interpolationSearch(arr, <span class="hljs-number">0</span>, arr.length - <span class="hljs-number">1</span>, <span class="hljs-number">2</span>));<br>    &#125;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * Interpolation Search algorithm to find the target element in a sorted array.</span><br><span class="hljs-comment">     *</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> arr    The sorted array to search within</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> left   The left pointer (start index of the search range)</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> right  The right pointer (end index of the search range)</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> target The element to search for</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@return</span> The index of the target element if found, or -1 if not found</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> <span class="hljs-title function_">interpolationSearch</span><span class="hljs-params">(<span class="hljs-type">int</span>[] arr, <span class="hljs-type">int</span> left, <span class="hljs-type">int</span> right, <span class="hljs-type">int</span> target)</span> &#123;<br>        <span class="hljs-comment">// Check for invalid search conditions (base cases)</span><br>        <span class="hljs-keyword">if</span> (left &gt; right || target &lt; arr[<span class="hljs-number">0</span>] || target &gt; arr[arr.length - <span class="hljs-number">1</span>]) &#123;<br>            <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>; <span class="hljs-comment">// Target element not found</span><br>        &#125;<br><br>        <span class="hljs-comment">// Calculate the midpoint index using the interpolation formula</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">mid</span> <span class="hljs-operator">=</span> left + ((target - arr[left]) * (right - left)) / (arr[right] - arr[left]);<br><br>        <span class="hljs-type">int</span> <span class="hljs-variable">midVal</span> <span class="hljs-operator">=</span> arr[mid];<br><br>        <span class="hljs-keyword">if</span> (midVal &gt; target) &#123;<br>            <span class="hljs-comment">// If the middle value is greater, search the left half of the array</span><br>            <span class="hljs-keyword">return</span> interpolationSearch(arr, left, mid - <span class="hljs-number">1</span>, target);<br>        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (midVal &lt; target) &#123;<br>            <span class="hljs-comment">// If the middle value is smaller, search the right half of the array</span><br>            <span class="hljs-keyword">return</span> interpolationSearch(arr, mid + <span class="hljs-number">1</span>, right, target);<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            <span class="hljs-comment">// If the target is equal to the middle value, return its index</span><br>            <span class="hljs-keyword">return</span> mid;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>CS</category>
+      
+      <category>Data Structures</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Data Structures</tag>
+      
+      <tag>CS</tag>
+      
+      <tag>Java</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Search Algorithm - Binary Search Enhanced</title>
     <link href="/2023/09/15/Search-Algorithm-Binary-Search-Enhanced/"/>
     <url>/2023/09/15/Search-Algorithm-Binary-Search-Enhanced/</url>
